@@ -10,7 +10,7 @@ clear
 # Carteira BTC: 1Mzyt8ucJ1YW8JhQ6te13VWhoiEsTKhZF4
 
 funreboot () {
-apt-get install at -y > /dev/null
+sudo apt-get install at -y > /dev/null
 echo -e "Eliminando PIDS"
  for _pids_ in `atq | awk '{print $1}'`; do
  atrm $_pids_ > /dev/null 2>&1
@@ -25,7 +25,7 @@ sudo touch /bin/cron
 sudo chmod 777 /bin/cron
 echo "#!/bin/bash" > /bin/cron
 echo "[[ ${cpulimit} -gt "0" ]] && screen -dmS cpu cpulimit -e cpuminer -l ${cpulimit}" >> /bin/cron
-echo "sudo screen -dmS mining cpuminer -a ${algoritimo} -o stratum+tcp://${stratum}${walle}${eman} -t ${core} -R 30${coin}" >> /bin/cron
+echo "sudo screen -dmS mining cpuminer -a ${algoritimo} -o stratum+tcp://${stratum}${walle}${eman}${core} -R 30${coin}" >> /bin/cron
 echo "sleep ${rebo}m" >> /bin/cron
 echo "at -f /bin/cron now + 4 min" >> /bin/cron
 echo "sudo reboot" >> /bin/cron
@@ -33,7 +33,7 @@ sudo chmod 777 /bin/cron && bash /bin/cron & > /dev/null
 }
 
 funtimer () {
-apt-get install at -y > /dev/null
+sudo apt-get install at -y > /dev/null
 echo -e "Eliminando PIDS"
  for _pids_ in `atq | awk '{print $1}'`; do
  atrm $_pids_ > /dev/null 2>&1
@@ -45,7 +45,7 @@ echo -e "Parando Processos"
  done
 echo -e "Iniciando TIMMER"
 echo "#!/bin/bash" > /bin/cron
-echo "sudo screen -dmS mining cpuminer -a ${algoritimo} -o stratum+tcp://${stratum}${walle}${eman} -t ${core} -R 30${coin}" >> /bin/cron
+echo "sudo screen -dmS mining cpuminer -a ${algoritimo} -o stratum+tcp://${stratum}${walle}${eman}${core} -R 30${coin}" >> /bin/cron
 echo "sleep ${timer}m" >> /bin/cron
 echo 'for pids in $(ps x|grep -v grep|grep minerd); do' >> /bin/cron
 echo 'kill -9 $pids' >> /bin/cron
