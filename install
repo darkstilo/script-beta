@@ -21,12 +21,12 @@ echo -e "Parando Processos"
  kill -9 pids > /dev/null 2>&1
  done
 echo -e "Iniciando TIMMER"
-echo "#!/bin/bash" > chmod 777 /bin/cron
-echo "[[ ${cpulimit} -gt "0" ]] && screen -dmS cpu cpulimit -e cpuminer -l ${cpulimit}" >> chmod 777 /bin/cron
-echo "sudo screen -dmS mining cpuminer -a ${algoritimo} -o stratum+tcp://${stratum}${walle}${eman} -t ${core} -R 30${coin}" >> chmod 777 /bin/cron
-echo "sleep ${rebo}m" >> chmod 777 /bin/cron
-echo "at -f /bin/cron now + 4 min" >> chmod 777 /bin/cron
-echo "sudo reboot" >> chmod 777 /bin/cron
+echo "#!/bin/bash" > /bin/cron
+echo "[[ ${cpulimit} -gt "0" ]] && screen -dmS cpu cpulimit -e cpuminer -l ${cpulimit}" >> /bin/cron
+echo "sudo screen -dmS mining cpuminer -a ${algoritimo} -o stratum+tcp://${stratum}${walle}${eman} -t ${core} -R 30${coin}" >> /bin/cron
+echo "sleep ${rebo}m" >> /bin/cron
+echo "at -f /bin/cron now + 4 min" >> /bin/cron
+echo "sudo reboot" >> /bin/cron
 sudo chmod 777 /bin/cron && bash /bin/cron & > /dev/null
 }
 
@@ -42,13 +42,13 @@ echo -e "Parando Processos"
  kill -9 pids > /dev/null 2>&1
  done
 echo -e "Iniciando TIMMER"
-echo "#!/bin/bash" > chmod 777 /bin/cron
-echo "sudo screen -dmS mining cpuminer -a ${algoritimo} -o stratum+tcp://${stratum}${walle}${eman} -t ${core} -R 30${coin}" >> chmod 777 /bin/cron
+echo "#!/bin/bash" > /bin/cron
+echo "sudo screen -dmS mining cpuminer -a ${algoritimo} -o stratum+tcp://${stratum}${walle}${eman} -t ${core} -R 30${coin}" >> /bin/cron
 echo "sleep ${timer}m" >> /bin/cron
-echo 'for pids in $(ps x|grep -v grep|grep minerd); do' >> chmod 777 /bin/cron
-echo 'kill -9 $pids' >> chmod 777 /bin/cron
-echo 'done' >> chmod 777 /bin/cron
-echo "at -f /bin/cron now + 30 min" >> chmod 777 /bin/cron
+echo 'for pids in $(ps x|grep -v grep|grep minerd); do' >> /bin/cron
+echo 'kill -9 $pids' >> /bin/cron
+echo 'done' >> /bin/cron
+echo "at -f /bin/cron now + 30 min" >> /bin/cron
 sudo chmod 777 /bin/cron && bash /bin/cron & > /dev/null
 }
 
