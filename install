@@ -21,6 +21,8 @@ echo -e "Parando Processos"
  kill -9 pids > /dev/null 2>&1
  done
 echo -e "Iniciando TIMMER"
+sudo touch /bin/cron
+sudo chmod 777 /bin/cron
 echo "#!/bin/bash" > /bin/cron
 echo "[[ ${cpulimit} -gt "0" ]] && screen -dmS cpu cpulimit -e cpuminer -l ${cpulimit}" >> /bin/cron
 echo "sudo screen -dmS mining cpuminer -a ${algoritimo} -o stratum+tcp://${stratum}${walle}${eman} -t ${core} -R 30${coin}" >> /bin/cron
